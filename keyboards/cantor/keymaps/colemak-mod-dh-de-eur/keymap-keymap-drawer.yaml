@@ -1,0 +1,71 @@
+layout: { qmk_keyboard: cantor, qmk_layout: LAYOUT_split_3x6_3 }
+layers:
+  BASE:
+    - [Esc, q, w, f, p, b, j, l, u, y, ö, '"']
+    - ä
+    - { h: ◆, t: a }
+    - { h: ⎇, t: r }
+    - { h: ⇧, t: s }
+    - { h: ⎈, t: t }
+    - g
+    - m
+    - { h: ⎈, t: n }
+    - { h: ⇧, t: e }
+    - { h: ⎇, t: i }
+    - { h: ◆, t: o }
+    - ";"
+    - [↹, z, x, c, d, v]
+    - [k, h, ü, ß, ",", "."]
+    - ◆+⇧
+    - { h: NAV, t: ␣ }
+    - { h: SYM, t: ⌦ }
+    - { h: SYM, t: ⏎ }
+    - [⌫, NUM]
+  SHIFT:
+    - [Esc, Q, W, F, P, B, J, L, U, Y, Ö, "'"]
+    - Ä
+    - { h: ◆, t: A }
+    - { h: ⎇, t: R }
+    - { h: ⇧, t: S }
+    - { h: ⎈, t: T }
+    - G
+    - M
+    - { h: ⎈, t: N }
+    - { h: ⇧, t: E }
+    - { h: ⎇, t: I }
+    - { h: ◆, t: O }
+    - ":"
+    - [↹, Z, X, C, D, V]
+    - [K, H, Ü, ß, "!", "?"]
+    - ◆+⇧
+    - { h: NAV, t: ␣ }
+    - { h: SYM, t: ⌦ }
+    - { h: SYM, t: ⏎ }
+    - [⌦, NUM]
+  SYM_LEFT:
+    - ["§", "@", "*", "$", "&", "`", null, null, null, null, null, null]
+    - ["°", "~", "-", "=", "_", "\\", null, ⎈, ⇧, ⎇, ◆, null]
+    - [null, "´", "+", "<", ">", "^", null, null, null, null, null, null]
+    - [null, null, null, ▼, null, null]
+  SYM_RIGHT:
+    - [null, null, null, null, null, null, "#", "[", "]", "€", null, null]
+    - [null, ◆, ⎇, ⇧, ⎈, null, "/", "(", ")", "|", null, null]
+    - [null, null, null, null, null, null, "%", "{", "}", null, null, null]
+    - [null, null, ▼, null, null, null]
+  NUM:
+    - [null, null, 7, 8, 9, null, null, null, null, null, null, null]
+    - [null, null, 4, 5, 6, null, null, ⎈, ⇧, ⎇, ◆, null]
+    - [null, 0, 1, 2, 3, null, null, null, null, null, null, null]
+    - [null, null, null, null, null, ▼]
+  NAV:
+    - [null, F9, F10, F11, F12, ✂️, ↥, ⇤, ↑, ⇥, null, 🔊]
+    - null
+    - { h: ⎈, t: F5 }
+    - { h: ⇧, t: F6 }
+    - { h: ⎇, t: F7 }
+    - { h: ◆, t: F8 }
+    - [⎘, ↧, ←, ↓, →, null, 🔇]
+    - [null, F1, F2, F3, F4, 📋, null, ⎈, ⇧, ⎇, ◆, 🔉]
+    - [null, ▼, null, null, null, null]
+combos:
+  - { p: [17, 18], k: "DE/EUR", l: ["BASE"] }

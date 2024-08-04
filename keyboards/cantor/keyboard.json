@@ -8,7 +8,7 @@
         "mousekey": true,
         "nkro": true
     },
-    "development_board": "blackpill_f401",
+    "development_board": "blackpill_f411",
     "url": "https://github.com/diepala/cantor",
     "usb": {
         "device_version": "1.0.0",

@@ -4,6 +4,18 @@
 #include QMK_KEYBOARD_H
 #include "keymap_german.h"
 #include "keymap_eurkey.h"
+// #include "print.h"
+// #include "limits.h" // for CHAR_BIT (number of bits in a char)
+
+// void print_layer_state(layer_state_t state) {
+//     int           nBits = sizeof(state) * CHAR_BIT;
+//     layer_state_t mask  = 1 << (nBits - 1);
+//     for (int iBit = nBits; iBit-- > 0;) {
+//         int active = (state & mask) > 0;
+//         printf("Layer %d active: %d\n", iBit, active);
+//         mask = mask >> 1;
+//     }
+// }
 
 enum LAYER { DE_BASE_, EU_BASE_, DE_SYML_, DE_SYMR_, EU_SYML_, EU_SYMR_, NUM_, NAV_ };
 
@@ -46,6 +58,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
         } else if (IS_LAYER_ON(EU_BASE_)) {
             set_single_persistent_default_layer(DE_BASE_);
         }
+        layer_state_set(default_layer_state);
     }
 }
 
@@ -129,3 +142,7 @@ void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
 //             │   │   │   │       │   │   │   │
 //             └───┴───┴───┘       └───┴───┴───┘
 //
+
+void keyboard_post_init_user(void) {
+    layer_state_set(default_layer_state);
+}

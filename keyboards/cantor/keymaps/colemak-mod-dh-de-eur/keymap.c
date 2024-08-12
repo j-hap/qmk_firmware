@@ -38,6 +38,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &shift_backspace_delete_override,
     &de_shift_dquote_quote_override,
     &de_shift_comma_exlamation_override,
+    &de_shift_semicolon_colon_override,
     &de_shift_dot_question_override,
     &eu_shift_dquote_quote_override,
     &eu_shift_comma_exlamation_override,

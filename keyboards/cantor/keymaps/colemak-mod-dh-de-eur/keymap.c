@@ -66,9 +66,9 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [DE_BASE_] = LAYOUT_split_3x6_3(
-        KC_ESC,               KC_Q,                 KC_W,                 KC_F,                 KC_P,                 KC_B,                                  KC_J,                 KC_L,                 KC_U,                 KC_Y,              DE_ODIA,              DE_DQUO,
+        KC_ESC,               KC_Q,                 KC_W,                 KC_F,                 KC_P,                 KC_B,                                  KC_J,                 KC_L,                 KC_U,                 DE_Y,              DE_ODIA,              DE_DQUO,
         DE_ADIA,              LGUI_T(KC_A),         LALT_T(KC_R),         LSFT_T(KC_S),         LCTL_T(KC_T),         KC_G,                                  KC_M,         RCTL_T(KC_N),         RSFT_T(KC_E),         LALT_T(KC_I),         RGUI_T(KC_O),              DE_SCLN,
-        KC_TAB,               KC_Z,                 KC_X,                 KC_C,                 KC_D,                 KC_V,                                  KC_K,                 KC_H,              DE_UDIA,                DE_SS,              KC_COMM,               KC_DOT,
+        KC_TAB,               DE_Z,                 KC_X,                 KC_C,                 KC_D,                 KC_V,                                  KC_K,                 KC_H,              DE_UDIA,                DE_SS,              KC_COMM,               KC_DOT,
                                                                           S(KC_LGUI),           LT(NAV_, KC_SPC),     LT(DE_SYMR_, KC_DEL),  LT(DE_SYML_, KC_ENT),              KC_BSPC,             MO(NUM_)
     ),
     [EU_BASE_] = LAYOUT_split_3x6_3(

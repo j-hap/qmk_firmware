@@ -45,14 +45,14 @@ layers:
     - { h: SYM, t: ⏎ }
     - [⌦, NUM]
   SYM_LEFT:
-    - ["§", "@", "*", "$", "&", "`", null, null, null, null, null, null]
-    - ["°", "~", "-", "=", "_", "\\", null, ⎈, ⇧, ⎇, ◆, null]
+    - [null, "@", "*", "$", "&", "`", null, null, null, null, null, null]
+    - [null, "~", "-", "=", "_", "\\", null, ⎈, ⇧, ⎇, ◆, null]
     - [null, "´", "+", "<", ">", "^", null, null, null, null, null, null]
     - [null, null, null, ▼, null, null]
   SYM_RIGHT:
     - [null, null, null, null, null, null, "#", "[", "]", "€", null, null]
-    - [null, ◆, ⎇, ⇧, ⎈, null, "/", "(", ")", "|", null, null]
-    - [null, null, null, null, null, null, "%", "{", "}", null, null, null]
+    - [null, ◆, ⎇, ⇧, ⎈, null, "/", "(", ")", "|", "°", null]
+    - [null, null, null, null, null, null, "%", "{", "}", "§", null, null]
     - [null, null, ▼, null, null, null]
   NUM:
     - [null, null, 7, 8, 9, null, null, null, null, null, null, null]

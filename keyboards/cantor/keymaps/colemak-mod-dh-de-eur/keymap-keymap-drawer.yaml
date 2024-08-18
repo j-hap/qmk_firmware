@@ -60,7 +60,7 @@ layers:
     - [null, 0, 1, 2, 3, null, null, null, null, null, null, null]
     - [null, null, null, null, null, ▼]
   NAV:
-    - [null, F9, F10, F11, F12, ✂️, ↥, ⇤, ↑, ⇥, null, 🔊]
+    - [null, F9, F10, F11, F12, ✂️, ↥, ⇤, ↑, ⇥, 🖶, 🔊]
     - null
     - { h: ◆, t: F5 }
     - { h: ⎇, t: F6 }

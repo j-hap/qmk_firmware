@@ -34,7 +34,8 @@ const key_override_t eu_shift_comma_exlamation_override = ko_make_with_layers(MO
 const key_override_t eu_shift_dot_question_override     = ko_make_with_layers(MOD_MASK_SHIFT, EU_DOT, EU_QUES, 1 << EU_BASE_);
 
 // This globally defines all key overrides to be used
-const key_override_t **key_overrides = (const key_override_t *[]){
+// clang-format off
+const key_override_t *key_overrides[] = {
     &shift_backspace_delete_override,
     &de_shift_dquote_quote_override,
     &de_shift_comma_exlamation_override,
@@ -43,8 +44,8 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &eu_shift_dquote_quote_override,
     &eu_shift_comma_exlamation_override,
     &eu_shift_dot_question_override,
-    NULL // Null terminate the array of overrides!
 };
+// clang-format on
 
 enum combo_events { SWP_BASE };
 

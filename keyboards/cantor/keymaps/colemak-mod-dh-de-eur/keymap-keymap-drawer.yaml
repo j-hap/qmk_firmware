@@ -1,4 +1,4 @@
-layout: { qmk_keyboard: cantor, qmk_layout: LAYOUT_split_3x6_3 }
+layout: { qmk_keyboard: cantor, layout_name: LAYOUT_split_3x6_3 }
 draw_config:
   n_columns: 2
 layers:
@@ -20,8 +20,8 @@ layers:
     - [k, h, ü, ß, ",", "."]
     - ◆+⇧
     - { h: NAV, t: ␣ }
-    - { h: SYM, t: ⌦ }
-    - { h: SYM, t: ⏎ }
+    - { h: SYM_R, t: ⌦ }
+    - { h: SYM_L, t: ⏎ }
     - [⌫, NUM]
   SHIFT:
     - [Esc, Q, W, F, P, B, J, L, U, Y, Ö, "'"]
@@ -41,15 +41,15 @@ layers:
     - [K, H, Ü, ß, "!", "?"]
     - ◆+⇧
     - { h: NAV, t: ␣ }
-    - { h: SYM, t: ⌦ }
-    - { h: SYM, t: ⏎ }
+    - { h: SYM_R, t: ⌦ }
+    - { h: SYM_L, t: ⏎ }
     - [⌦, NUM]
-  SYM_LEFT:
-    - [null, "@", "*", "$", "&", "`", null, null, null, null, null, null]
+  SYM_L:
+    - [null, "@", "$", "&", "*", "`", null, null, null, null, null, null]
     - [null, "~", "-", "=", "_", "\\", null, ⎈, ⇧, ⎇, ◆, null]
     - [null, "´", "+", "<", ">", "^", null, null, null, null, null, null]
     - [null, null, null, ▼, null, null]
-  SYM_RIGHT:
+  SYM_R:
     - [null, null, null, null, null, null, "#", "[", "]", "€", null, null]
     - [null, ◆, ⎇, ⇧, ⎈, null, "/", "(", ")", "|", "°", null]
     - [null, null, null, null, null, null, "%", "{", "}", "§", null, null]

@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                           S(KC_LGUI),           LT(NAV_, KC_SPC),     LT(EU_SYMR_, KC_DEL),  LT(EU_SYML_, KC_ENT),              KC_BSPC,             MO(NUM_)
     ),
     [DE_SYML_] = LAYOUT_split_3x6_3(
-        XXXXXXX,  DE_AT,    DE_ASTR,  DE_DLR,   DE_AMPR,  DE_GRV,     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+        XXXXXXX,  DE_AT,    DE_DLR,   DE_AMPR,  DE_ASTR,  DE_GRV,     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
         XXXXXXX,  DE_TILD,  DE_MINS,  DE_EQL,   DE_UNDS,  DE_BSLS,    XXXXXXX,  KC_RCTL,  KC_RSFT,  KC_LALT,  KC_RGUI,  XXXXXXX,
         XXXXXXX,  DE_ACUT,  DE_PLUS,  DE_LABK,  DE_RABK,  DE_CIRC,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
                                       XXXXXXX,  XXXXXXX,  XXXXXXX,    KC_TRNS,  XXXXXXX,  XXXXXXX
@@ -91,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       XXXXXXX,  XXXXXXX,  KC_TRNS,    XXXXXXX,  XXXXXXX,  XXXXXXX
     ),
     [EU_SYML_] = LAYOUT_split_3x6_3(
-        XXXXXXX,  EU_AT,    EU_ASTR,  EU_DLR,   EU_AMPR,  EU_GRV,     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+        XXXXXXX,  EU_AT,    EU_DLR,   EU_AMPR,  EU_ASTR,  EU_GRV,     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
         XXXXXXX,  EU_TILD,  EU_MINS,  EU_EQL,   EU_UNDS,  EU_BSLS,    XXXXXXX,  KC_RCTL,  KC_RSFT,  KC_LALT,  KC_RGUI,  XXXXXXX,
         XXXXXXX,  EU_ACUT,  EU_PLUS,  EU_LABK,  EU_RABK,  EU_CIRC,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
                                       XXXXXXX,  XXXXXXX,  XXXXXXX,    KC_TRNS,  XXXXXXX,  XXXXXXX

@@ -147,4 +147,15 @@ void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 void keyboard_post_init_user(void) {
     layer_state_set(default_layer_state);
+    // tells the firmware on boot that the c13 pin is a gpio output pin, that can be set to low or
+    // high, necessary do that activating the led on base layer change works
+    gpio_set_pin_output(C13);
+}
+
+layer_state_t default_layer_state_set_user(layer_state_t state) {
+    // whenever the default layer is changed, this function is called, the layer is set on boot and
+    // whenever a combo is pressed. here the led is activated to show which base layer is active
+    // (blue led on when on de layer)
+    gpio_write_pin(C13, IS_LAYER_ON(DE_BASE_));
+    return state;
 }

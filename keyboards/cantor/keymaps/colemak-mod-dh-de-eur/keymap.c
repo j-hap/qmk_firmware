@@ -4,18 +4,27 @@
 #include QMK_KEYBOARD_H
 #include "keymap_german.h"
 #include "keymap_eurkey.h"
-// #include "print.h"
-// #include "limits.h" // for CHAR_BIT (number of bits in a char)
 
-// void print_layer_state(layer_state_t state) {
-//     int           nBits = sizeof(state) * CHAR_BIT;
-//     layer_state_t mask  = 1 << (nBits - 1);
-//     for (int iBit = nBits; iBit-- > 0;) {
-//         int active = (state & mask) > 0;
-//         printf("Layer %d active: %d\n", iBit, active);
-//         mask = mask >> 1;
-//     }
-// }
+#ifdef CONSOLE_ENABLE
+#    include "print.h"
+#    include "limits.h" // for CHAR_BIT (number of bits in a char)
+
+void print_layer_state(layer_state_t state) {
+    int nBits = sizeof(state) * CHAR_BIT;
+    printf("Layers: ");
+    for (int iBit = nBits; iBit-- > 0;) {
+        printf("%02d ", iBit);
+    }
+    printf("\nActive: ");
+    layer_state_t mask = 1 << (nBits - 1);
+    for (int iBit = nBits; iBit-- > 0;) {
+        int active = (state & mask) > 0;
+        printf("%2d ", active);
+        mask = mask >> 1;
+    }
+    printf("\n");
+}
+#endif
 
 enum LAYER { DE_BASE_, EU_BASE_, DE_SYML_, DE_SYMR_, EU_SYML_, EU_SYMR_, NUM_, NAV_ };
 
@@ -60,7 +69,6 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
         } else if (IS_LAYER_ON(EU_BASE_)) {
             set_single_persistent_default_layer(DE_BASE_);
         }
-        layer_state_set(default_layer_state);
     }
 }
 
@@ -145,17 +153,22 @@ void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
 //             └───┴───┴───┘       └───┴───┴───┘
 //
 
-void keyboard_post_init_user(void) {
-    layer_state_set(default_layer_state);
+void keyboard_pre_init_user(void) {
     // tells the firmware on boot that the c13 pin is a gpio output pin, that can be set to low or
-    // high, necessary do that activating the led on base layer change works
+    // high. necessary do, so that activating the led on base layer change works.
+    // keyboard_pre_init_user seems to be too early to call this, but default_layer_state_set_user
+    // is called before keyboard_post_init_user, so keyboard_post_init_user is too late.
     gpio_set_pin_output(C13);
 }
 
 layer_state_t default_layer_state_set_user(layer_state_t state) {
     // whenever the default layer is changed, this function is called, the layer is set on boot and
-    // whenever a combo is pressed. here the led is activated to show which base layer is active
-    // (blue led on when on de layer)
-    gpio_write_pin(C13, IS_LAYER_ON(DE_BASE_));
+    // whenever the combo (defined above) is pressed. the layer state is not set to be the default
+    // layer state on boot, see https://github.com/qmk/qmk_firmware/issues/13196.
+    // set_single_persistent_default_layer triggers this callback, but does not update the current
+    // layer state, only the default one, but we need an update to the current one as well
+    layer_state_set(state);
+    // the blue led is activated when on german base layer (needs to be set to LOW to activate!)
+    gpio_write_pin(C13, !IS_LAYER_ON(DE_BASE_));
     return state;
 }
